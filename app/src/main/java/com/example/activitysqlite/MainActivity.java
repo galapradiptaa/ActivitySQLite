@@ -1,12 +1,14 @@
 package com.example.activitysqlite;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.example.activitysqlite.adapter.TemanAdapter;
 import com.example.activitysqlite.database.DBController;
@@ -16,6 +18,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TemanAdapter adapter;
@@ -23,6 +30,22 @@ public class MainActivity extends AppCompatActivity {
     DBController controller = new DBController(this);
     String id,nm,tlp;
     private FloatingActionButton fab;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.popupmenu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.mnview)
+        {
+            Intent i = new Intent(getApplicationContext(), Teman .class);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
     @Override

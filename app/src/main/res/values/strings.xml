@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ActivitySQLite</string>
+    <string name="lihatdata">Lihat Data</string>
+    <string name="editdata">Edit Data</string>
+    <string name="hapusdata">Hapus Data</string>
+    <string name="datakontak">Data Kontak</string>
+    <string name="namaitem">Nama Item</string>
+    <string name="detailkontak">Detail Kontak</string>
+    <string name="nama">Nama</string>
+    <string name="notel">Nomor Telpon</string>
 </resources>
